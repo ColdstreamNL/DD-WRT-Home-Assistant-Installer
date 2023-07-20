@@ -29,6 +29,8 @@ echo -e "\e[92;1;48;5;241m |  \e[94;1;48;5;241mMateusz Dera  \e[92;1;48;5;241m  
 echo -e "\e[92;1;48;5;240m | \e[94;1;48;5;240m Version:\e[92;1;48;5;240m 1.3.1                  | \e[0m"
 echo -e "\e[92;1;48;5;239m ===================================== \e[0m"
 
+mount --bind /jffs/ /opt/
+
 if ! [ -d "/jffs/.tmp" ]; then
    mkdir /jffs/.tmp || exit 1
 fi
