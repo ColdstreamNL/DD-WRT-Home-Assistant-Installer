@@ -33,19 +33,17 @@ if ! [ -d "/jffs/.tmp" ]; then
    mkdir /jffs/.tmp || exit 1
 fi
 cd /jffs/.tmp || exit 1
-curl -kLO https://raw.githubusercontent.com/Mateusz-Dera/DD-WRT-Easy-Optware-ng-Installer/master/install.sh || exit 1
-sh ./install.sh -s 
-/opt/bin/ipkg update || exit 1
+/opt/bin/opkg update || exit 1
 rm -R /jffs/.tmp || exit 1
 
 cd /jffs/opt || exit 1
 
 # Install
-/opt/bin/ipkg install gcc || exit 1
-/opt/bin/ipkg install make || exit 1
-/opt/bin/ipkg install busybox || exit 1
-/opt/bin/ipkg install python3 || exit 1
-/opt/bin/ipkg install openssl-dev || exit 1
+/opt/bin/opkg install gcc || exit 1
+/opt/bin/opkg install make || exit 1
+/opt/bin/opkg install busybox || exit 1
+/opt/bin/opkg install python3 || exit 1
+/opt/bin/opkg install openssl-dev || exit 1
 
 # Python
 python3 -m venv --without-pip homeassistant || exit 1
